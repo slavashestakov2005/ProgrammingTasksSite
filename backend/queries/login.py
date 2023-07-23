@@ -46,3 +46,26 @@ def login():
 def logout():
     logout_user()
     return redirect('/')
+
+
+@app.route("/sign_up")
+@cross_origin()
+def sign_up():
+    if current_user.is_authenticated:
+        return redirect('/')
+    if request.method == 'Input':
+        if user_login == request.form['login']:
+            return render_template(TEMPLATE, error='Логин уже занят, выберете другой')
+        if password1 != password2:
+            return render_template(TEMPLATE, error='Ваши Пароли не совпадаю')
+
+
+
+        u = User.select_by_login(user_login)
+        if u is not None and u.check_password(user_password):
+            login_user(u)
+            return redirect('/')
+        else:
+            return render_template(TEMPLATE, error='Пользователя с логином {0} и паролем {1} не существует'
+                                   .format(user_login, user_password))
+    return render_template(TEMPLATE)

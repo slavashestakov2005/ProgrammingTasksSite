@@ -1,3 +1,117 @@
 .error-msg {
     color: #FF0000;
 }
+
+
+
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9fd;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:  #002c26;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%,
+    color-stop(.5, rgba(255, 255, 255, .25)),
+    color-stop(.5, transparent), to(transparent));
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+    margin: 0px;
+}
+
+.header_main {
+    width: 100%;
+    background-color: #007765;
+    height: 84px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 21;
+    transition: height 1s ease-in-out;
+}
+.main_container {
+    width: 100%;
+    max-width: 1219px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+.navigation_container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main_title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 84px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.auth_signin {
+    position: relative;
+    display: block;
+    padding: 7.5px;
+    padding-left: 30px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.auth_signup {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    text-decoration: none;
+    padding: 7.5px 15px;
+    background-color: #00342C;
+    color: #fff;
+    line-height: normal;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+.auth_signin::before {
+    position: absolute;
+    left: 0;
+    top: 9px;
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url(/images/icon-login.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.menu{
+    width: 210px;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 20px;
+}
+
+.section {
+    background: url(images/2.png) center no-repeat;
+    background-size: cover;
+    padding-top: 160px;
+    padding-bottom: 160px;
+}

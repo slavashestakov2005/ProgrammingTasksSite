@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="70" height="70">
+	<title>icon-login-svg</title>
+	<defs>
+		<image  width="62" height="47" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAvAQMAAACBhes5AAAAAXNSR0IB2cksfwAAAAZQTFRFAAAA////pdmf3QAAAAJ0Uk5TAP9bkSK1AAAAi0lEQVR4nHXRwQ3DIAwFUKIeeswIGSWjlW7mURjBRx8sXH+ijxKhcsDvAjafUnJt4Sh7fUUMSEISR0s0QBMKGOEJAzqRZ88Ltew+IOV9oRFKGOHAGREd+CQCQI1KCNEIJYzw/7AFulwoS1PO0x+jPobX5YGS0Qx8Gcs9qBndDHPGOwOvgGzZdnwK9h8ZrNUnGLFXnQAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Layer copy" href="#img1" x="4" y="13"/>
+</svg>
