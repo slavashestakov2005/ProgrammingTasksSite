@@ -95,7 +95,7 @@ body{
     display: block;
     width: 18px;
     height: 18px;
-    background-image: url(/images/icon-login.svg);
+    background-image: url(/Images/icon-login.svg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -110,7 +110,7 @@ body{
 }
 
 .section {
-    background: url(images/2.png) center no-repeat;
+    background: url(/Images/2.png) center no-repeat;
     background-size: cover;
     padding-top: 160px;
     padding-bottom: 160px;
