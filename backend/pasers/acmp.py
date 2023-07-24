@@ -1,22 +1,17 @@
-import requests
-from bs4 import BeautifulSoup as bs
 from .parser import Parser
 
 
 class AcmpParser(Parser):
+    URL_TEMPLATE = "https://acmp.ru/index.asp?main=task&lang=ru&id_task={}"
     def get_text(self, teg, clas, index):
-        soup = bs(self.r.text, "html.parser")
-
-        task_name = soup.find_all(teg, class_=clas)
+        task_name = self.soup.find_all(teg, class_=clas)
 
         spisok_class = list(task_name)
 
         return spisok_class[index - 1].text
 
     def get_text1(self, teg, teg1, clas):
-        soup = bs(self.r.text, "html.parser")
-
-        task_name = soup.find_all(teg, class_=clas)
+        task_name = self.soup.find_all(teg, class_=clas)
 
         spisok_class = list(task_name)
 
@@ -29,9 +24,7 @@ class AcmpParser(Parser):
         return examples_inpu, examples_outpu
 
     def parse(self, task_id: int):
-        URL_TEMPLATE = "https://acmp.ru/index.asp?main=task&lang=ru&id_task=" + str(task_id)
-        self.r = requests.get(URL_TEMPLATE)
-        self.r.encoding = 'windows-1251'
+        self.soup = self.get_html(task_id, 'windows-1251')
         # название
         self.name = self.get_text('h1', '', 1)
         # сложность

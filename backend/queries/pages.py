@@ -8,7 +8,7 @@ from ..help.errors import not_found_error
 @app.route("/")
 @cross_origin()
 def main_page():
-    return render_template('login.html')
+    return render_template('index.html')
 
 
 @app.route('/<path:path>')

@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <title>Сайт задач по программированию</title>
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="/JS/scripts.js"></script>
-    <link rel="stylesheet" href="/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="/CSS/style.css">
-</head>
-<body>
-<div class="wrapper">
-    <div class="content">
-        Основная часть текст
+<html lang="ru_RU" dir="ltr">
+    <head>
+        <link rel="stylesheet" href="/CSS/style.css">
+        <script src="/JS/smoothscroll.js"></script>
+    </head>
+    <body>
+        <header class="header_main">
+            <div class="main_container">
+                <div class="navigation_container">
+                    <div class="logo">
+                        <a href="#Header_site">
+                            <img height="75" width="65" src="/Images/1.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="menu">
+                        <a href="login" class="auth_signin">Login</a>
+                        <a href="signup" class="auth_signup">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </header>
         {% block content %}{% endblock %}
-    </div>
-    <div class="footer">
-        Футер
-    </div>
-</div>
-</body>
+    </body>
 </html>
