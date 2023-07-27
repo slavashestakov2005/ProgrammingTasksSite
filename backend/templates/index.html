@@ -1,71 +1,42 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <section id="Header_site" style="height: 84px;"></section>
 <section class="section">
     <div class="main_container">
         <h1 class="main_title">Бот от Артёма здесь</h1>
     </div>
-</section>  
-
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
-    <p>/</p>
+</section>
+<section>
+    <div class="tasks_container">
+        <h1 class="main_title">Задачи</h1>
+    </div>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Состояние</th>
+                <th>Номер</th>
+                <th>Задача</th>
+                <th>Тема</th>
+                <th>Сложность</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>1</td>
+                <td><a href="task1">A+B</a></td>
+                <td>Задачи для начинающих</td>
+                <td>2%</td>
+            </tr>
+            <tr> <!-- class="active-row" -->
+                <td></td>
+                <td>2</td>
+                <td><a href="task2">Сумма</a></td>
+                <td>Целочисленная арифметика</td>
+                <td>19%</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 {% endblock %}

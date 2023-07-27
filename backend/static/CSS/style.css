@@ -1,11 +1,4 @@
-.error-msg {
-    color: #FF0000;
-}
-
-
-
-
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 15px;
 }
 
@@ -13,12 +6,16 @@
     -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
     background-color: #f9f9fd;
 }
-
+  
 ::-webkit-scrollbar-thumb {
     background-color:  #002c26;
     background-image: -webkit-gradient(linear, 0 0, 0 100%,
     color-stop(.5, rgba(255, 255, 255, .25)),
     color-stop(.5, transparent), to(transparent));
+} */
+
+::-webkit-scrollbar {
+    width: 0px;
 }
 
 html{
@@ -65,6 +62,16 @@ body{
     color: #FFFFFF;
 }
 
+.tasks_container{
+    background-color: #007765;
+    border-radius: 15px;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+
 .auth_signin {
     position: relative;
     display: block;
@@ -87,6 +94,10 @@ body{
     box-shadow: var(--shadow);
 }
 
+.auth_signup:hover{
+    background-color: #015144;
+}
+
 .auth_signin::before {
     position: absolute;
     left: 0;
@@ -95,14 +106,22 @@ body{
     display: block;
     width: 18px;
     height: 18px;
-    background-image: url(/Images/icon-login.svg);
+    background-image: url(/images/icon-login.svg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+.auth_signin:hover::before{
+    left: 2px;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
 .menu{
-    width: 210px;
+    width: 270px;
     font-size: 20px;
     display: grid;
     grid-template-columns: auto auto;
@@ -110,8 +129,54 @@ body{
 }
 
 .section {
-    background: url(/Images/2.png) center no-repeat;
+    background: url(images/2.png) center no-repeat;
     background-size: cover;
     padding-top: 160px;
     padding-bottom: 160px;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #007765;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #007765;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #007765;
+}
+
+.styled-table a{
+    color: #000;
+    text-decoration: none;
+}
+
+.styled-table a:hover{
+    color: red;
+    text-decoration: underline;
 }
