@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <title>aaaaaaaaaaaaaaaaaa</title>
+    <link rel="stylesheet" href="/CSS/tasks-style.css">
+</head>
+<section>
+    <div class="tasks_container">
+        <h1 class="main_title" style="margin-top: 10%">Заданияяяя</h1>
+    </div>
+    <div class="slava_s4">
+        <div>
+            <h1 class="name-tasks">Названия заданий:</h1>
+            <div class="tasks">
+                <ul>
+                    {% for i in tasks %}
+                        <li class="task"><a href="{{ i[1] }}" class="task_url">{{ i[0] }}</a></li>
+                    {% endfor %} 
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h1 class="name-hrefs">Полезные ссылки:</h1>
+            <div class="hrefs">
+                <ul>
+                    {% for i in hrefs %}
+                        <li class="href"><a href="{{ i[1] }}" class="href_url">{{ i[0] }}</a></li>
+                    {% endfor %} 
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

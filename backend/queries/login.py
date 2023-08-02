@@ -1,8 +1,7 @@
-from backend import app, login
-from flask import render_template, request, redirect
+from backend import app
+from flask import render_template, request, redirect, make_response
 from flask_cors import cross_origin
-from flask_login import login_user, logout_user, current_user
-from .__help__ import send_query
+from .__help__ import send_query, login_user, logout_user, get_user
 
 '''
                     TEMPLATE            Страница входа.
@@ -14,14 +13,10 @@ from .__help__ import send_query
 TEMPLATE = 'login.html'
 
 
-@login.user_loader
-def load_user(id):
-    return User.select(int(id))
-
-
 @app.route("/login", methods=['GET', 'POST'])
 @cross_origin()
 def login():
+    current_user = get_user(request)
     if current_user.is_authenticated:
         return redirect('/')
     if request.method == 'POST':
@@ -34,8 +29,9 @@ def login():
         data = {'password': user_password, 'login': user_login}
         status, ans = send_query('login', data, 'post')
         if status == 200:
-            login_user(u)
-            return redirect('/')
+            resp = make_response(render_template(TEMPLATE))
+            login_user(resp, ans)
+            return resp
         else:
             return render_template(TEMPLATE, error='Пользователя с логином {0} и паролем {1} не существует'
                                    .format(user_login, user_password))
@@ -45,28 +41,34 @@ def login():
 @app.route("/logout")
 @cross_origin()
 def logout():
-    logout_user()
-    return redirect('/')
+    resp = make_response(redirect('/'))
+    logout_user(resp)
+    return resp
 
 
-@app.route("/sign_up")
+@app.route("/registration", methods=['GET', 'POST'])
 @cross_origin()
 def sign_up():
+    current_user = get_user(request)
     if current_user.is_authenticated:
         return redirect('/')
-    if request.method == 'Input':
-        if user_login == request.form['login']:
-            return render_template(TEMPLATE, error='Логин уже занят, выберете другой')
+    if request.method == 'POST':
+        try:
+            user_login = request.form['login']
+            name = request.form['name']
+            email = request.form['email']
+            password1 = request.form['psw1']
+            password2 = request.form['psw2']
+        except Exception:
+            return render_template(TEMPLATE, error='Некорректные данные')
         if password1 != password2:
             return render_template(TEMPLATE, error='Ваши Пароли не совпадаю')
+        data = {'password': password1, 'login': user_login, 'name': name, 'email': email}
+        status, ans = send_query('reg', data, 'post')
+        if ans['status'] == 'already':
+            return render_template(TEMPLATE, error='Пользователь с таким логином или почтой уже существует')
+        resp = make_response(render_template(TEMPLATE))
+        login_user(resp, ans)
+        return resp
 
-
-
-        u = User.select_by_login(user_login)
-        if u is not None and u.check_password(user_password):
-            login_user(u)
-            return redirect('/')
-        else:
-            return render_template(TEMPLATE, error='Пользователя с логином {0} и паролем {1} не существует'
-                                   .format(user_login, user_password))
     return render_template(TEMPLATE)

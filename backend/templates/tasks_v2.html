@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block content %}
+<head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="stylesheet" href="/CSS/register_login_style.css">
+        <link rel="stylesheet" href="/CSS/table.css">
+        <script src="/JS/register_login_js.js"></script>
+        <script src="/JS/smoothscroll.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+           .styled-table{
+                width: 65%;
+                background-color: #FFFFFF
+           }
+        </style>
+</head>
+<div class="tasks_container">
+    <h1 class="main_title" style="margin-top: 10%;">Уроки "курс от Артёма"</h1>
+</div>
+<body>
+
+</body>
+<section>
+
+<section>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th width="10%">Урок №</th>
+                <th width="50%">Название</th>
+                <th width="20%">Дата</th>
+                <th width="20%">Прогрес</th>
+            </tr>
+        </thead>
+
+            {% for task_num in range(tasks.__len__()) %}
+                {% set task = tasks[task_num] %}
+                <tr class="strochka">
+                    <td>{{ task_num + 1 }}</td>
+                    <td>{{ task[0] }}</td>
+                    <td>{{ task[1] }}</td>
+                    <td>{{ '100%' }}</td>
+                </tr>
+            {% endfor %}
+    </table>
+</section>
+{% endblock %}

@@ -26,7 +26,7 @@
                                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
                             </div>
                               <div class="container">
-                                <label for="uname"><b>Логин</b></label>
+                                <label for="login"><b>Логин</b></label>
                                 <input type="text" placeholder="Введите логин" name="login" required>
 
                                 <label for="psw"><b>Пароль</b></label>
@@ -49,7 +49,7 @@
                         <a class="auth_signup" onclick="document.getElementById('id02').style.display='block'"
                         style="width:auto;">Регистрация</a>
                         <div id="id02" class="modal">
-                            <form class="modal-content animate registerform">
+                            <form class="modal-content animate registerform" action="registration" method="post">
                             <div class="imgcontainer">
                                 <h1 class="main_title">Регистрация</h1>
                                 <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
@@ -58,16 +58,19 @@
                                 <p>Пожалуйста заполните форму, чтобы создать аккаунт.</p>
                                 <hr>
                                 <label for="login"><b>Логин</b></label>
-                                <input type="password" placeholder="Введите пароль" name="psw" required>
+                                <input type="text" placeholder="Введите логин" name="login" required>
 
                                 <label for="email"><b>Почта</b></label>
                                 <input type="text" placeholder="Введите почту" name="email" required>
 
-                                <label for="psw"><b>Пароль</b></label>
-                                <input type="password" placeholder="Введите пароль" name="psw" required>
+                                <label for="name"><b>Имя</b></label>
+                                <input type="text" placeholder="Введите имя" name="name" required>
 
-                                <label for="psw"><b>Повторите пароль</b></label>
-                                <input type="password" placeholder="Повторите пароль" name="psw" required>
+                                <label for="psw1"><b>Пароль</b></label>
+                                <input type="password" placeholder="Введите пароль" name="psw1" required>
+
+                                <label for="psw2"><b>Повторите пароль</b></label>
+                                <input type="password" placeholder="Повторите пароль" name="psw2" required>
 
                                 <hr>
 

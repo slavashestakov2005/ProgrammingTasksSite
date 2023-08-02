@@ -1,0 +1,37 @@
+.href_url{
+    width: 16%;
+    color: #007765;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.href_url:hover{
+    background-color: #007765;
+    border-radius: 5px;
+    transition: 0.5s;
+    color: white;
+}
+.task_url{
+    width: 16%;
+    color: #007765;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.task_url:hover{
+    background-color: #007765;
+    border-radius: 5px;
+    transition: 0.5s;
+    color: white;
+}
+.name-tasks{
+    font-weight: bold;
+    color: black;
+}
+.name-hrefs{
+    font-weight: bold;
+    color: black;
+}
+
+.slava_s4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

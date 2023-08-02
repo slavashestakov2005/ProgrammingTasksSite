@@ -1,0 +1,22 @@
+.discriprion{
+    font-weight: bold;
+    color: black;
+}
+.lesson-container{
+    background-color: #007765;
+    width: 70%;
+    border-radius: 15px;
+    margin-left: 15%;
+}
+.lesson_url{
+    width: 16%;
+    color: #007765;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.lesson_url:hover{
+    background-color: #007765;
+    border-radius: 5px;
+    transition: 0.5s;
+    color: white;
+}
