@@ -1,7 +1,7 @@
 from backend import app
 from flask import render_template, request, redirect, make_response
 from flask_cors import cross_origin
-from .__help__ import send_query, login_user, logout_user, get_user
+from .__help__ import send_simple_query, login_user, logout_user, get_user
 
 '''
                     TEMPLATE            Страница входа.
@@ -10,7 +10,7 @@ from .__help__ import send_query, login_user, logout_user, get_user
 '''
 
 
-TEMPLATE = 'login.html'
+TEMPLATE = 'index.html'
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -27,7 +27,7 @@ def login():
             return render_template(TEMPLATE, error='Некорректные данные')
 
         data = {'password': user_password, 'login': user_login}
-        status, ans = send_query('login', data, 'post')
+        status, ans = send_simple_query('login', data, 'post')
         if status == 200:
             resp = make_response(render_template(TEMPLATE))
             login_user(resp, ans)
@@ -64,7 +64,7 @@ def sign_up():
         if password1 != password2:
             return render_template(TEMPLATE, error='Ваши Пароли не совпадаю')
         data = {'password': password1, 'login': user_login, 'name': name, 'email': email}
-        status, ans = send_query('reg', data, 'post')
+        status, ans = send_simple_query('reg', data, 'post')
         if ans['status'] == 'already':
             return render_template(TEMPLATE, error='Пользователь с таким логином или почтой уже существует')
         resp = make_response(render_template(TEMPLATE))
