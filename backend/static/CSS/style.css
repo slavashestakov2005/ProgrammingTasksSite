@@ -76,6 +76,10 @@ body{
     padding-right: 55px;
 }
 
+.text_style {
+    color: #fff;
+}
+
 .auth_signin {
     position: relative;
     display: block;

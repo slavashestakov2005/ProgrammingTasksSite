@@ -11,8 +11,8 @@
     </div>
     <div class="cources">
         <ul>
-            {% for i in cources %}
-                <li class="cource"><a href="{{ i[1] }}" class="cource_url">{{ i[0] }}</a></li>
+            {% for cource in cources %}
+                <li class="cource"><a href="/course/{{ cource['id'] }}" class="cource_url">{{ cource['name'] }}</a></li>
             {% endfor %}
         </ul>
     </div>

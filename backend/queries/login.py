@@ -62,7 +62,7 @@ def sign_up():
         except Exception:
             return render_template(TEMPLATE, error='Некорректные данные')
         if password1 != password2:
-            return render_template(TEMPLATE, error='Ваши Пароли не совпадаю')
+            return render_template(TEMPLATE, error='Ваши пароли не совпадают')
         data = {'password': password1, 'login': user_login, 'name': name, 'email': email}
         status, ans = send_simple_query('reg', data, 'post')
         if ans['status'] == 'already':

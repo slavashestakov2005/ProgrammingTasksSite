@@ -9,6 +9,12 @@
         <script src="/JS/smoothscroll.js"></script>
     </head>
     <body>
+        <script>
+            function openid01() { document.getElementById('id01').style.display='block'; }
+            function openid02() { document.getElementById('id02').style.display='block'; }
+            function logout() { window.location.replace('logout'); }
+            function empty() {}
+        </script>
         <header class="header_main">
             <div class="main_container">
                 <div class="navigation_container">
@@ -18,8 +24,7 @@
                         </a>
                     </div>
                     <div class="menu">
-                        <a class="auth_signin" onclick="document.getElementById('id01').style.display='block'"
-                        style="width:auto;">Вход</a>
+                        <a id ='log' class="auth_signin" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Вход</a>
                         <div id="id01" class="modal">
                             <form class="modal-content animate loginform" action="login" method="post">
                             <div class="imgcontainer">
@@ -46,8 +51,7 @@
                               </div>
                             </form>
                         </div>
-                        <a class="auth_signup" onclick="document.getElementById('id02').style.display='block'"
-                        style="width:auto;">Регистрация</a>
+                        <a id='reg' class="auth_signup" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Регистрация</a>
                         <div id="id02" class="modal">
                             <form class="modal-content animate registerform" action="registration" method="post">
                             <div class="imgcontainer">
@@ -83,5 +87,43 @@
             </div>
         </header>
         {% block content %}{% endblock %}
+        <script>
+            window.getCookie = function(name) {
+                var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                if (match) return match[2];
+            };
+
+            function decode_flask_cookie(val) {
+                if (typeof val === 'undefined') return "{}";
+                if (val.indexOf('\\') === -1) return val;
+                val = val.slice(1, -1).replace(/\\"/g, '"');
+                val = val.replace(/\\(\d{3})/g, function(match, octal) {
+                    return String.fromCharCode(parseInt(octal, 8));
+                });
+                return val.replace(/\\\\/g, '\\');
+            }
+
+            var cookie = JSON.parse(decode_flask_cookie(getCookie('current_user')));
+            if ('name' in cookie) {
+                document.getElementById('log').textContent = 'Выход';
+                document.getElementById('reg').innerText = unescape(cookie['name']);
+                document.getElementById('log').classList.remove('auth_signin');
+                document.getElementById('reg').classList.remove('auth_signup');
+                document.getElementById('log').classList.add('text_style');
+                document.getElementById('reg').classList.add('text_style');
+                document.getElementById('log').onclick = logout;
+                document.getElementById('reg').onclick = empty;
+            }
+            else {
+                document.getElementById('log').textContent = 'Вход';
+                document.getElementById('reg').textContent = 'Регистрация';
+                document.getElementById('log').classList.remove('text_style');
+                document.getElementById('reg').classList.remove('text_style');
+                document.getElementById('log').classList.add('auth_signin');
+                document.getElementById('reg').classList.add('auth_signup');
+                document.getElementById('log').onclick = openid01;
+                document.getElementById('reg').onclick = openid02;
+            }
+        </script>
     </body>
 </html>
