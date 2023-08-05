@@ -33,15 +33,37 @@
                 <hr style="border: black 2px solid;">
             {% endfor %}
             <label for="email" class="task-text"><b>введите решение задачи:</b></label>
-            <textarea class="js-textarea" placeholder="Введите решение задачи" name="name" required></textarea>
+            <form action="solve_task?task_id={{ task_id }}&lesson_id={{ lesson_id }}&course_id={{ course_id }}" method="post">
+            <textarea class="js-textarea" placeholder="Введите решение задачи" name="code" required></textarea>
             <div class="submit-task">
                 <button class="submit">Отправить решение</button>
             </div>
+            </form>
             {% if task['note'] %}
             <h1>Примечание:</h1>
             <h1 class="text">{{ task['note'] }}</h1>
             {% endif %}
         </div>
     <div class="line"></div>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Дата</td>
+                <td>ID</td>
+                <td>Время</td>
+                <td>Вердикт</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for solve in solves %}
+            <tr>
+                <td>{{ solve['date'] }}</td>
+                <td>{{ solve['id'] }}</td>
+                <td>{{ solve['time'] }}</td>
+                <td>{{ solve['verdict'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </section>
 {% endblock %}

@@ -17,8 +17,6 @@ def send_simple_query(url, data=None, method='GET', headers=None):
         r = requests.get(url, json=data, headers=headers)
     elif method == 'POST':
         r = requests.post(url, json=data, headers=headers)
-    print(r.status_code)
-    print(r.content)
     return r.status_code, r.json()
 
 

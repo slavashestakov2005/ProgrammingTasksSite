@@ -39,6 +39,9 @@
                                 <input type="password" placeholder="Введите пароль" name="psw" required>
 
                                 <hr>
+                                {% if error_login %}
+                                  <p class="error-msg">{{ error_login }}</p>
+                                {% endif %}
 
                                 <button type="submit">Войти</button>
                                 <label>
@@ -78,6 +81,9 @@
                                 <input type="password" placeholder="Повторите пароль" name="psw2" required>
 
                                 <hr>
+                                {% if error_reg %}
+                                  <p class="error-msg">{{ error_reg }}</p>
+                                {% endif %}
 
                                 <button type="submit">Создать аккаунт</button>
                               </div>
@@ -129,6 +135,12 @@
                 document.getElementById('reg').onclick = openid02;
             }
             initTextArea()
+            {% if error_login %}
+                document.getElementById('log').click();
+            {% endif %}
+            {% if error_reg %}
+                document.getElementById('reg').click();
+            {% endif %}
         </script>
     </body>
 </html>
