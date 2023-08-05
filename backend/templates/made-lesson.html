@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <title>Урокииииии</title>
+    <link rel="stylesheet" href="/CSS/made-something.css">
+</head>
+<section>
+    <center>
+        <div class="container">
+            <form class="modal-content made courseform">
+
+                <label for="login" class="name"><b>название урока</b></label>
+                <textarea class="js-textarea" placeholder="Введите название урока" name="name" required></textarea>
+            
+            </form>
+        </div>
+        <div class="button-container">
+            <button onclick="append_course.py" class="button">Добавить</button>
+        </div>
+    </center>
+</section>
+{% endblock %}

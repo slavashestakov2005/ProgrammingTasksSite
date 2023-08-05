@@ -3,6 +3,7 @@
     color: #007765;
     font-weight: bold;
     transition: 0.5s;
+    font-size: larger;
 }
 .href_url:hover{
     background-color: #007765;
@@ -15,6 +16,7 @@
     color: #007765;
     font-weight: bold;
     transition: 0.5s;
+    font-size: larger;
 }
 .task_url:hover{
     background-color: #007765;
@@ -35,8 +37,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-
-
 .task_text {
     align-items: center;
+}
+.line{
+    border: none;
+    border-top: 5px dotted #007765;
+    color: #fff;
+    height: 5px;
+    width: 100%;
 }

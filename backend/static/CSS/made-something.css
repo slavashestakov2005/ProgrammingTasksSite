@@ -1,0 +1,38 @@
+.container{
+    margin-top: 5%;
+}
+.name{
+    color: #007765;
+    font-size: larger;
+    font-weight: bolder;
+}
+.discription{
+    color: #007765;
+    font-size: larger;
+    font-weight: bolder;
+}
+.button-container{
+    box-shadow: #007765;
+    background-color: #007765;
+    width: 30%;
+    height: 7%;
+}
+.button{
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.js-textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: solid grey;
+    background-color: white;
+    min-height: 54px;
+    font-size: 14px;
+    line-height: 1.2;
+    margin: 0 auto;
+    resize: none;
+}

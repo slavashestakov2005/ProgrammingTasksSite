@@ -5,12 +5,6 @@ from backend import app
 from ..help.errors import not_found_error
 
 
-@app.route("/")
-@cross_origin()
-def main_page():
-    return render_template('index.html')
-
-
 @app.route('/<path:path>')
 @cross_origin()
 def static_file(path):

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <title>Заданияяяяяяяя</title>
+    <link rel="stylesheet" href="/CSS/made-something.css">
+</head>
+<section>
+    <center>
+        <div class="container">
+            <form class="modal-content made courseform">
+
+                <label for="login" class="name"><b>название задания</b></label>
+                <textarea class="js-textarea" placeholder="Введите название задания" name="name" required></textarea>
+
+                <label for="login" class="name"><b>ограничения(время в сек., память в мб через пробел)</b></label>
+                <textarea class="js-textarea" placeholder="Введите ограничения" name="name" required></textarea>
+
+                <label for="login" class="name"><b>текст задачи</b></label>
+                <textarea class="js-textarea" placeholder="Введите текст задачи" name="name" required></textarea>
+
+                <label for="login" class="name"><b>входные данные</b></label>
+                <textarea class="js-textarea" placeholder="Введите INPUT.TXT" name="name" required></textarea>
+
+                <label for="login" class="name"><b>выходные данные</b></label>
+                <textarea class="js-textarea" placeholder="Введите OUTPUT.TXT" name="name" required></textarea>
+                
+                <label for="login" class="name"><b>примеры через в ковычках через пробел</b></label>
+                <textarea class="js-textarea" placeholder="Введите примеры" name="name" required></textarea>
+
+                <label for="login" class="name"><b>примечание</b></label>
+                <textarea class="js-textarea" placeholder="Введите примечание" name="name" required></textarea>
+            
+            </form>
+        </div>
+        <div class="button-container">
+            <button onclick="append_course.py" class="button">Добавить</button>
+        </div>
+    </center>
+</section>
+{% endblock %}

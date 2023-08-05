@@ -7,12 +7,20 @@
 .cource_url{
     width: 16%;
     color: #007765;
-    font-weight: bold;
+    font-weight: bolder;
     transition: 0.5s;
+    font-size: larger;
 }
 .cource_url:hover{
     background-color: #007765;
     border-radius: 5px;
     transition: 0.5s;
     color: white;
+}
+.line{
+    border: none;
+    border-top: 5px dotted #007765;
+    color: #fff;
+    height: 5px;
+    width: 100%;
 }

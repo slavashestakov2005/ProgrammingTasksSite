@@ -188,3 +188,22 @@ a:hover{
     color: red;
     text-decoration: underline;
 }
+.back{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    text-decoration: none;
+    padding: 7.5px 15px;
+    background-color: #00342C;
+    color: #fff;
+    line-height: normal;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    margin-right: 4%;
+}
+.back:hover{
+    background-color: #015144;
+}
+.feedback{
+    color: white;
+}

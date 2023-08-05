@@ -1,0 +1,29 @@
+select{
+    text-align: center;
+    text-align-last: center;
+    width: 30%;
+    height: 10%;
+    margin-top: 7%;
+    background-color: #007765;
+    color: white;
+}
+option{
+    text-align: center;
+    background-color: #007765;
+    color: white;
+}
+.number{
+    margin-top: 5%;
+}
+.name{
+    color: #007765;
+    font-size: larger;
+    font-weight: bolder;
+}
+.button{
+    margin-top: 3%;
+    width: 20%;
+    height: 6.5%;
+    font-size: larger;
+    font-weight: bolder;
+}

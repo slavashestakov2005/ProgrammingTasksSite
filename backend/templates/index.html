@@ -4,39 +4,31 @@
 <section id="Header_site" style="height: 84px;"></section>
 <section class="section">
     <div class="main_container">
-        <h1 class="main_title">Бот от Артёма здесь</h1>
+        <h1 class="main_title">Сайт от Артёма</h1>
     </div>
 </section>
+<head>
+    <link rel="stylesheet" href="/CSS/cource-style.css">
+    <link rel="stylesheet" href="/CSS/pensilicon-style.css">
+</head>
 <section>
-    <div class="tasks_container">
-        <h1 class="main_title">Задачи</h1>
+    <div class="cource_container">
+        <h1 class="main_title">Курсы</h1>
     </div>
-    <table class="styled-table">
-        <thead>
-            <tr>
-                <th>Состояние</th>
-                <th>Номер</th>
-                <th>Задача</th>
-                <th>Тема</th>
-                <th>Сложность</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td></td>
-                <td>1</td>
-                <td><a href="task1">A+B</a></td>
-                <td>Задачи для начинающих</td>
-                <td>2%</td>
-            </tr>
-            <tr> <!-- class="active-row" -->
-                <td></td>
-                <td>2</td>
-                <td><a href="task2">Сумма</a></td>
-                <td>Целочисленная арифметика</td>
-                <td>19%</td>
-            </tr>
-        </tbody>
-    </table>
+    {% if courses.__len__() %}
+    <div class="cources">
+        <ul>
+            {% for course in courses %}
+                <li class="course"><a href="/course?course_id={{ course['id'] }}" class="cource_url">{{ course['name'] }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <p>У вас нет доступных курсов :(</p>
+    {% endif %}
+    <center>
+        <a href="./made-course.html"><img src="../static/Images/icon-pencil.png" class="icon-pencil"></a>
+    </center>
+    <div class="line"></div>
 </section>
 {% endblock %}

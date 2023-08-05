@@ -1,0 +1,74 @@
+.task-container{
+    margin-top: 7%;
+}
+.line{
+    border: none;
+    border-top: 5px dotted #007765;
+    height: 5px;
+    width: 100%;
+}
+.task-name{
+    color: #007765;
+    font-size: 200%;
+    font-weight: bolder;
+}
+.limits{
+    font-size: 125%;
+    font-family: cursive;
+}
+.text{
+    color: #007765;
+    font-size: 125%;
+    font-family: cursive;
+}
+.task-text{
+    color: #007765;
+    font-size: larger;
+    font-weight: bolder;
+}
+.js-textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: solid grey;
+    background-color: white;
+    min-height: 20%;
+    font-size: 120%;
+    line-height: 1.2;
+    margin: 0 auto;
+    resize: none;
+}
+.back{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    text-decoration: none;
+    padding: 7.5px 15px;
+    background-color: #00342C;
+    color: #fff;
+    line-height: normal;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    margin-right: 4%;
+}
+.back:hover{
+    background-color: #015144;
+}
+.feedback{
+    color: white;
+}
+.submit-task{
+    width: 10%;
+    height: 4%;
+    background-color: #015144;
+    border-radius: 5px;
+}
+.submit-tas:hover{
+    background-color: #00342C;
+}
+.submit{
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+}

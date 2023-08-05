@@ -2,7 +2,7 @@ import json
 import requests
 
 
-server = 'http://192.168.88.111:5000/'
+server = 'http://192.168.89.246:5000/'
 cookie_fields = ['jwt_access', 'jwt_refresh', 'current_user']
 
 
@@ -17,6 +17,8 @@ def send_simple_query(url, data=None, method='GET', headers=None):
         r = requests.get(url, json=data, headers=headers)
     elif method == 'POST':
         r = requests.post(url, json=data, headers=headers)
+    print(r.status_code)
+    print(r.content)
     return r.status_code, r.json()
 
 

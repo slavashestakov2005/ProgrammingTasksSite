@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/CSS/register_login_style.css">
         <script src="/JS/register_login_js.js"></script>
         <script src="/JS/smoothscroll.js"></script>
+        <script src="/JS/scripts.js"></script>
     </head>
     <body>
         <script>
@@ -47,7 +48,7 @@
 
                               <div class="container" style="background-color:#f1f1f1">
                                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Отмена</button>
-                                <span class="psw">Забыл <a href="#">пароль</a>?</span>
+                                <span class="psw">Забыл <a href="./password.html">пароль</a>?</span>
                               </div>
                             </form>
                         </div>
@@ -82,6 +83,9 @@
                               </div>
                             </form>
                         </div>
+                    </div>
+                    <div class="back">
+                        <a href="javascript: history.go(-1)" class="feedback">вернуться</a>
                     </div>
                 </div>
             </div>
@@ -124,6 +128,7 @@
                 document.getElementById('log').onclick = openid01;
                 document.getElementById('reg').onclick = openid02;
             }
+            initTextArea()
         </script>
     </body>
 </html>

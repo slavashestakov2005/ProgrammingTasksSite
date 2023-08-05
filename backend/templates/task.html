@@ -2,36 +2,46 @@
 
 {% block content %}
 <head>
-    <meta charset="UTF-8">
-    <title>aaaaaaaaaaaaaaaaaa</title>
-    <link rel="stylesheet" href="/CSS/tasks-style.css">
+    <link rel="stylesheet" href="/CSS/task-style.css">
 </head>
 <section>
-    <div class="tasks_container">
-        <h1 class="main_title" style="margin-top: 10%">Сдать Задачу</h1>
-    </div>
-    <div class="task_text">Название задачи </div>
-    <div class="slava_s4">
-        <div>
-            <h1 class="name-tasks">INPUT.TXT:</h1>
-            <div class="tasks">
-                <ul>
-                    {% for i in tasks %}
-                        <li class="task"><a href="{{ i[1] }}" class="task_url">{{ i[0] }}</a></li>
-                    {% endfor %} 
-                </ul>
+        <div class="task-container">
+            <center>
+                <h1 class="task-name">{{ task['name'] }}</h1>
+                <h1 class="limits">(Время: {{ task['time_limit'] }}сек.; Память: {{ task['memory_limit'] }}Мб.)</h1>
+            </center>
+            <hr style="border: grey 0.5px solid;">
+            <h1>Текст задачи:</h1>
+            <h1 class="text">{{ task['task_condition'] }}</h1>
+            <hr style="border: grey 0.5px solid;">
+            {% if task['input_text'] %}
+            <h1>Входные данные:</h1>
+            <h1 class="text">{{ task['input_text'] }}</h1>
+            <hr style="border: grey 0.5px solid;">
+            {% endif %}
+            {% if task['output_text'] %}
+            <h1>Входные данные:</h1>
+            <h1 class="text">{{ task['output_text'] }}</h1>
+            <hr style="border: grey 0.5px solid;">
+            {% endif %}
+            <h1>Примеры:</h1>
+            <hr style="border: black 2px solid;">
+            {% for i in task['tests'] %}
+                <h1 class="text">ввод: {{ i['input'] }}</h1>
+                <hr style="border: grey 0.5px solid;">
+                <h1 class="text">вывод: {{ i['output'] }}</h1>
+                <hr style="border: black 2px solid;">
+            {% endfor %}
+            <label for="email" class="task-text"><b>введите решение задачи:</b></label>
+            <textarea class="js-textarea" placeholder="Введите решение задачи" name="name" required></textarea>
+            <div class="submit-task">
+                <button class="submit">Отправить решение</button>
             </div>
+            {% if task['note'] %}
+            <h1>Примечание:</h1>
+            <h1 class="text">{{ task['note'] }}</h1>
+            {% endif %}
         </div>
-        <div>
-            <h1 class="name-hrefs">OUTPUT.TXT:</h1>
-            <div class="hrefs">
-                <ul>
-                    {% for i in hrefs %}
-                        <li class="href"><a href="{{ i[1] }}" class="href_url">{{ i[0] }}</a></li>
-                    {% endfor %} 
-                </ul>
-            </div>
-        </div>
-    </div>
+    <div class="line"></div>
 </section>
 {% endblock %}

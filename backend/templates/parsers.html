@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="../static/CSS/parsers.css">
+</head>
+<section>
+    <center>
+        <select>
+            <option>ACMP</option>
+            <option>CodeForces</option>
+        </select>
+    </center>
+    <center>
+        <div class="number">
+            <label for="login" class="name"><b>введите номер задачи: </b></label>
+            <input placeholder="Введите номер задачи" name="name" required>
+        </div>
+    </center>
+
+    <center>
+        <button class="button">submit</button>
+    </center>
+    
+    <div class="line"></div>
+</section>
+{% endblock %}
